@@ -398,3 +398,8 @@ FodyWeavers.xsd
 *.sln.iml
 .idea
 .DS_Store
+
+# Files to big
+libmobile_wallet_ios.a
+libmobile_wallet_ios_simulator.a
+*.so
