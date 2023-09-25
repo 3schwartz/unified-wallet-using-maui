@@ -21,12 +21,13 @@
                 FontSize="32"
                 HorizontalOptions="Center" />
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+            <Button
+                Text="Authenticate"
+                FontAttributes="Bold"
+                SemanticProperties.Hint="Click to authenticate with your fingerprint"
+                Clicked="OnBiometricClicked"
+                HorizontalOptions="Center"
+                />
 
             <Button
                 x:Name="CounterBtn"

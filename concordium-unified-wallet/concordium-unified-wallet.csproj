@@ -2,10 +2,10 @@
 
     <PropertyGroup>
         <!-- Uncomment below when building for Android -->
-<!--        <TargetFrameworks>net7.0-android</TargetFrameworks>-->
+        <TargetFrameworks>net7.0-android</TargetFrameworks>
 
         <!-- Uncomment below when building for iOS -->
-        <TargetFrameworks>net7.0-ios</TargetFrameworks>
+<!--        <TargetFrameworks>net7.0-ios</TargetFrameworks>-->
         
         <OutputType>Exe</OutputType>
         <RootNamespace>concordium_unified_wallet</RootNamespace>
@@ -51,10 +51,10 @@
     </ItemGroup>
 
     <!-- Uncomment below when building for iOS -->
-    <ItemGroup>
-        <NativeReference Include="Platforms/iOS/lib/libmobile_wallet_ios.a" Kind="Static" />
-        <NativeReference Include="Platforms/iOS/lib/libmobile_wallet_ios_simulator.a" Kind="Static" />
-    </ItemGroup>
+<!--    <ItemGroup>-->
+<!--        <NativeReference Include="Platforms/iOS/lib/libmobile_wallet_ios.a" Kind="Static" />-->
+<!--        <NativeReference Include="Platforms/iOS/lib/libmobile_wallet_ios_simulator.a" Kind="Static" />-->
+<!--    </ItemGroup>-->
 
     <ItemGroup>
         <AndroidNativeLibrary Include="Resources/lib/armeabi-v7a/libmobile_wallet.so">
@@ -72,6 +72,7 @@
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0"/>
+        <PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
     </ItemGroup>
     
 </Project>
