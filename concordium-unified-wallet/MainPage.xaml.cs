@@ -7,13 +7,31 @@ namespace concordium_unified_wallet;
 
 public partial class MainPage : ContentPage
 {
+    private const string storageKey = "foo";
     private int _count = 0;
     private readonly IFingerprint _fingerPrint;
+    public bool StorageEnabled { get; set; } = false;
 
     public MainPage(IFingerprint fingerprint)
     {
         InitializeComponent();
         _fingerPrint = fingerprint;
+        FromStorageBtn.IsEnabled = false;
+        ToStorageBtn.IsEnabled = false;
+    }
+
+    private async void WriteToStorage(object sender, EventArgs e)
+    {
+        await SecureStorage.Default.SetAsync(storageKey, StorageInsert.Text);
+        StorageInsert.Text = "";
+        StorageOutput.Text = "";
+    }
+
+    private async void GetFromStorage(object sender, EventArgs e)
+    {
+        StorageOutput.Text = "";
+        var fromStorage = await SecureStorage.Default.GetAsync(storageKey);
+        StorageOutput.Text = fromStorage is null or "" ? "There was nothing" : fromStorage;
     }
 
     private async void OnBiometricClicked(object sender, EventArgs e)
@@ -23,10 +41,14 @@ public partial class MainPage : ContentPage
         if (result.Authenticated)
         {
             await DisplayAlert("Authenticate!", "Access Granted", "OK");
+            FromStorageBtn.IsEnabled = true;
+            ToStorageBtn.IsEnabled = true;
         }
         else
         {
             await DisplayAlert("Unauthenticated", "Access Denied", "OK");
+            FromStorageBtn.IsEnabled = false;
+            ToStorageBtn.IsEnabled = false;
         }
     }
 

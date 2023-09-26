@@ -14,12 +14,31 @@
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 HeightRequest="200"
                 HorizontalOptions="Center" />
-
+            
+            <Entry
+                x:Name="StorageInsert"
+                Placeholder="Insert into secure storage"
+                />
+            
+            <Button
+                x:Name="ToStorageBtn"
+                Text="Write To Storage"
+                Clicked="WriteToStorage"
+                />
+            
             <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
+                x:Name="StorageOutput"
+                Text="Stored in Storage"
+                SemanticProperties.HeadingLevel="Level5"
+                FontSize="12"
                 HorizontalOptions="Center" />
+            
+            <Button
+                x:Name="FromStorageBtn"
+                Text="Get From Storage"
+                IsEnabled="false"
+                Clicked="GetFromStorage"
+            />
 
             <Button
                 Text="Authenticate"
