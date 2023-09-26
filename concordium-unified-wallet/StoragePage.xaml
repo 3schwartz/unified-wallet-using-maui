@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="concordium_unified_wallet.StoragePage">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            <Entry
+                x:Name="StorageInsert"
+                Placeholder="Insert into secure storage"
+            />
+            
+            <Button
+                x:Name="ToStorageBtn"
+                StyleClass="storageButtons"
+                Text="Write To Storage"
+                Clicked="WriteToStorage"
+            />
+            
+            <Label
+                x:Name="StorageOutput"
+                Text="Stored in Storage"
+                SemanticProperties.HeadingLevel="Level5"
+                FontSize="12"
+                HorizontalOptions="Center" />
+            
+            <Button
+                x:Name="FromStorageBtn"
+                StyleClass="storageButtons"
+                Text="Get From Storage"
+                IsEnabled="false"
+                Clicked="GetFromStorage"
+            />
+
+            <Button
+                x:Name="AuthBtn"
+                Text="Authenticate"
+                FontAttributes="Bold"
+                SemanticProperties.Hint="Click to authenticate with your fingerprint"
+                Clicked="OnBiometricClicked"
+                HorizontalOptions="Center"
+            />
+        
+            <Button
+                Text="Back"
+                Clicked="GoBack"
+            />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

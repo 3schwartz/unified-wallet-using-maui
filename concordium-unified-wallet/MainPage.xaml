@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="concordium_unified_wallet.MainPage">
     <ContentPage.Resources>
-        <StyleSheet Source="Resources/Styles/StyleCSS.css"/>
+        <StyleSheet Source="Resources/Styles/MainPage.css"/>
     </ContentPage.Resources>
 
     <ScrollView>
@@ -11,48 +11,17 @@
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
-
+            
+            <Button
+                Text="Go to Storage"
+                Clicked="GoToStorage"
+            />
+            
             <Image
                 Source="dotnet_bot.png"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 HeightRequest="200"
                 HorizontalOptions="Center" />
-            
-            <Entry
-                x:Name="StorageInsert"
-                Placeholder="Insert into secure storage"
-                />
-            
-            <Button
-                x:Name="ToStorageBtn"
-                StyleClass="storageButtons"
-                Text="Write To Storage"
-                Clicked="WriteToStorage"
-                />
-            
-            <Label
-                x:Name="StorageOutput"
-                Text="Stored in Storage"
-                SemanticProperties.HeadingLevel="Level5"
-                FontSize="12"
-                HorizontalOptions="Center" />
-            
-            <Button
-                x:Name="FromStorageBtn"
-                StyleClass="storageButtons"
-                Text="Get From Storage"
-                IsEnabled="false"
-                Clicked="GetFromStorage"
-            />
-
-            <Button
-                x:Name="AuthBtn"
-                Text="Authenticate"
-                FontAttributes="Bold"
-                SemanticProperties.Hint="Click to authenticate with your fingerprint"
-                Clicked="OnBiometricClicked"
-                HorizontalOptions="Center"
-                />
 
             <Button
                 x:Name="CounterBtn"
