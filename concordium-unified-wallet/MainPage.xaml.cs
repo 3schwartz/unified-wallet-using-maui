@@ -22,6 +22,10 @@ public partial class MainPage : ContentPage
 
     private async void WriteToStorage(object sender, EventArgs e)
     {
+        if (StorageInsert.Text == "")
+        {
+            return;
+        }
         await SecureStorage.Default.SetAsync(storageKey, StorageInsert.Text);
         StorageInsert.Text = "";
         StorageOutput.Text = "";

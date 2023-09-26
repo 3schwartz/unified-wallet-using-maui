@@ -2,6 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="concordium_unified_wallet.MainPage">
+    <ContentPage.Resources>
+        <StyleSheet Source="Resources/Styles/StyleCSS.css"/>
+    </ContentPage.Resources>
 
     <ScrollView>
         <VerticalStackLayout
@@ -22,6 +25,7 @@
             
             <Button
                 x:Name="ToStorageBtn"
+                StyleClass="storageButtons"
                 Text="Write To Storage"
                 Clicked="WriteToStorage"
                 />
@@ -35,12 +39,14 @@
             
             <Button
                 x:Name="FromStorageBtn"
+                StyleClass="storageButtons"
                 Text="Get From Storage"
                 IsEnabled="false"
                 Clicked="GetFromStorage"
             />
 
             <Button
+                x:Name="AuthBtn"
                 Text="Authenticate"
                 FontAttributes="Bold"
                 SemanticProperties.Hint="Click to authenticate with your fingerprint"
