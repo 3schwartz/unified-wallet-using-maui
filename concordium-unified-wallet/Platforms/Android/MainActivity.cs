@@ -3,7 +3,7 @@ using Android.Content.PM;
 using Android.OS;
 using Plugin.Fingerprint;
 
-namespace concordium_unified_wallet;
+namespace concordium_unified_wallet.Platforms.Android;
 
 [Activity(Theme = "@style/Maui.SplashTheme", MainLauncher = true,
     ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode |

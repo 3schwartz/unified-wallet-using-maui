@@ -1,10 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
     <PropertyGroup>
         <!-- Uncomment below when building for Android -->
         <TargetFrameworks>net7.0-android</TargetFrameworks>
 
-        <!-- Uncomment below when building for iOS -->
+<!--         Uncomment below when building for iOS -->
 <!--        <TargetFrameworks>net7.0-ios</TargetFrameworks>-->
         
         <OutputType>Exe</OutputType>

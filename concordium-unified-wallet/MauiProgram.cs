@@ -19,8 +19,10 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<MainPage>();
         builder.Services.AddSingleton(typeof(IFingerprint), CrossFingerprint.Current);
+        builder.Services.AddMauiBlazorWebView();
 
 #if DEBUG
+        builder.Services.AddBlazorWebViewDeveloperTools();
         builder.Logging.AddDebug();
 #endif
 

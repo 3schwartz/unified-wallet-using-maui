@@ -11,6 +11,11 @@
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
+
+            <Button
+                Text="Go to Web View"
+                Clicked="GoToWeb"
+            />
             
             <Button
                 Text="Go to Storage"

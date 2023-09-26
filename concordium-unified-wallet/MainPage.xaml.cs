@@ -16,6 +16,11 @@ public partial class MainPage : ContentPage
         _fingerPrint = fingerprint;
     }
 
+    private async void GoToWeb(object sender, EventArgs args)
+    {
+        await Navigation.PushAsync(new WebPage());
+    }
+    
     private async void GoToStorage(object sender, EventArgs args)
     {
         await Navigation.PushAsync(new StoragePage(_fingerPrint));

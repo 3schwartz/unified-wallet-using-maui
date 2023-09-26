@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace concordium_unified_wallet;
+namespace concordium_unified_wallet.Platforms.Android;
 
 [Application]
 public class MainApplication : MauiApplication
